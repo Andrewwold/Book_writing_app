@@ -10,10 +10,24 @@
   <%= @book.author %>
 </p>
 
-<p>
-  <strong>Body:</strong>
-  <p contenteditable="true" spellcheck="true"><%= @book.body %></p>
-</p>
+<div id="container">
+	<ol id="pages">
+		<li>
+		<h1>Look, pure CSS Animations!</h1>
+			<p>
+			  <strong>Body:</strong>
+			  <p contenteditable="true" spellcheck="true"><%= @book.body %></p>
+			</p>
+		</li>
+		<li>
+		<h1>Look, pure CSS Animations!</h1>
+			<p> This is a test</p>
+		</li>
+	</ol>
+</div>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
+<script>
+	CSSPageFlip.init('pages');
+</script>
